@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LungoJS - Kitchen Sink</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- For iPhone 4 with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icon@2x.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/icon.png">
+    <link rel="apple-touch-startup-image" href="assets/images/default.png">
+    
+    
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.base.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.nav.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.aside.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.article.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.list.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.splash.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.button.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.form.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.colour.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.icon.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.default.css">
+    <!-- App Stylesheet -->
+    <link rel="stylesheet" href="assets/stylesheets/app.css">
+
+
+    <link rel="stylesheet" href="assets/sugars/lungo.sugar.growl.css">
+       
+
+    <style>
+        @-webkit-keyframes flow-show {
+            0% { -webkit-transform: translateX(100%) scale(.7); }
+            50% { -webkit-transform: translateX(0%) scale(.7);}
+            100% { -webkit-transform: translateX(0%) scale(1);}
+        }
+
+        @-webkit-keyframes flow-show-revoke {
+            0% { -webkit-transform: translateX(0%) scale(1); }
+            50% { -webkit-transform: translateX(0%) scale(.7);}
+            100% { -webkit-transform: translateX(100%) scale(.7);}
+        }
+
+        @-webkit-keyframes flow-hide {
+            0% { -webkit-transform: translateX(0%) scale(1); }
+            50% { -webkit-transform: translateX(0%) scale(.7); }
+            100% { -webkit-transform: translateX(-100%) scale(.7); }
+        }
+
+        @-webkit-keyframes flow-hide-revoke {
+            0% { -webkit-transform: translateX(-100%) scale(.7); }
+            50% { -webkit-transform: translateX(0%) scale(.7);}
+            100% { -webkit-transform: translateX(0%) scale(1);}
+        }
+    </style>
+</head>
+
+<body class="app">
+
+	 <section id="friends">
+        <header data-back="home articblue" data-title="Following on Twitter" >
+			<a href="#" id="loadfriends" class="button onright articblue" data-icon="add">Load</a>
+        </header>
+        <article class="list" id="twitters">
+		</article>
+        <footer class="toolbar">
+        </footer>
+    </section>
+
+    <!-- Third parties dependencies -->
+    <script src="../../src/lib/QuoJS.js"></script>
+    <script src="../../src/lib/iscroll-lite.js"></script>
+    <!-- LungoJS Libraries (Development mode)-->
+    <script src="../../src/Lungo.js"></script>
+    <script src="../../src/Lungo.App.js" ></script>
+    <script src="../../src/Lungo.Core.js"></script>
+    <script src="../../src/Lungo.Dom.js"></script>
+    <script src="../../src/Lungo.Service.js"></script>
+    <script src="../../src/Lungo.Constants.js"></script>
+    <script src="../../src/router/Lungo.Router.js"></script>
+    <script src="../../src/router/Lungo.Router.History.js" ></script>
+    <script src="../../src/view/Lungo.View.Resize.js"></script>
+    <script src="../../src/view/Lungo.View.Article.js" ></script>
+    <script src="../../src/view/Lungo.View.Aside.js" ></script>
+    <script src="../../src/view/Lungo.View.Scroll.js"></script>
+    <script src="../../src/view/Lungo.View.Element.js"></script>
+    <script src="../../src/view/Lungo.View.Template.js"></script>
+    <script src="../../src/view/Lungo.View.Template.Binding.js"></script>
+    <script src="../../src/view/Lungo.View.Template.List.js"></script>
+    <script src="../../src/data/Lungo.Data.Cache.js"></script>
+    <script src="../../src/data/Lungo.Data.Sql.js"></script>
+    <script src="../../src/data/Lungo.Data.Storage.js"></script>
+    <script src="../../src/attributes/Lungo.Attributes.Data.js"></script>
+    <script src="../../src/Lungo.Fallback.js"></script>
+    <script src="../../src/boot/Lungo.Boot.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Resources.js" ></script>
+    <script src="../../src/boot/Lungo.Boot.Stats.js" ></script>
+    <script src="../../src/boot/Lungo.Boot.Layout.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Events.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Data.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Section.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Article.js"></script>
+
+<!--
+     <script src="assets/sugars/lungo.sugar.growl.js"></script>
+-->
+
+    <!-- LungoJS - Awines Sandbox App -->
+    <script src="app/app.js"></script>
+    <script src="app/events.js"></script>
+    <script src="app/view.js"></script>
+    <script src="app/data.js"></script>
+    <script src="app/services.js"></script>
+    
+    
+  
+     
+</body>
+</html>
